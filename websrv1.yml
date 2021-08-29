@@ -10,7 +10,7 @@
     - name: starting the httpd service
       service:
         name: httpd
-        state: restarted
+        state: started
         enabled: true
 
     - name: copying the index.html to httpd server

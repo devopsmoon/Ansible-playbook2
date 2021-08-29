@@ -10,6 +10,6 @@
     - name: starting the mysql server
       service:
         name: mariadb
-        state: restarted
+        state: started
         enabled: true
 
