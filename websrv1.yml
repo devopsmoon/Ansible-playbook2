@@ -17,7 +17,7 @@
       copy:
         src: index.html
         dest: /var/www/html/index.html
-        mode: 0400
+        mode: 644
         owner: centos
         group: centos
 
