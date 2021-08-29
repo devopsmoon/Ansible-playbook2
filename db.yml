@@ -32,5 +32,8 @@
         password: "{{dbpass}}"
         priv: '*.*:ALL,GRANT'
         state: present
+      register: keyout
 
+    - debug:
+        var: keyout
 
