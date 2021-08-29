@@ -1,0 +1,23 @@
+- name: Setup web servers
+  hosts: websrv
+  become: true
+  tasks:
+    - name: installing the httpd server
+      yum:
+        name: httpd
+        state: present
+
+    - name: starting the httpd service
+      service:
+        name: httpd
+        state: restarted
+        enabled: true
+
+    - name: copying the index.html to httpd server
+      copy:
+        src: index.html
+        dest: /var/www/html/index.html
+        mode: 0600
+        owner: root
+        group: root
+
