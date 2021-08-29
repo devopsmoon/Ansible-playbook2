@@ -8,9 +8,9 @@
         state: present
 
     - name: installing python mysql service
-        yum:
-          name: MySQL-python
-          state: present
+      yum:
+        name: MySQL-python
+        state: present
 
     - name: starting the mysql server
       service:
