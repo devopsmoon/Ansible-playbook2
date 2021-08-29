@@ -13,3 +13,9 @@
         state: started
         enabled: true
 
+    - name: creating the database accounts
+      mysql_db:
+        name: accounts
+        state: present
+
+
