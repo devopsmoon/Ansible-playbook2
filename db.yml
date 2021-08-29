@@ -2,9 +2,6 @@
   hosts: dbsrv
   become: true
   tasks:
-    - name: importing the db variable files
-      include_vars: vars/db_setup
-
     - name: installing mysql server
       yum:
         name: mariadb-server
