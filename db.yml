@@ -2,6 +2,9 @@
   hosts: dbsrv
   become: true
   tasks:
+    - name: importing the db variable files
+      include_vars: vars/db_setup
+
     - name: installing mysql server
       yum:
         name: mariadb-server
@@ -20,13 +23,13 @@
 
     - name: creating the database accounts
       mysql_db:
-        name: accounts
+        name: "{{dbname}}"
         state: present
 
     - name: creating the datases users
       mysql_user:
-        name: admin
-        password: 12345
+        name: "{{dbuser}}"
+        password: "{{dbpass}}"
         priv: '*.*:ALL,GRANT'
         state: present
 
