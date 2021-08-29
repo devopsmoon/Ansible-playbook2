@@ -25,6 +25,7 @@
       mysql_db:
         name: "{{dbname}}"
         state: present
+      register: db_out
 
     - name: creating the datases users
       mysql_user:
@@ -33,6 +34,9 @@
         priv: '*.*:ALL,GRANT'
         state: present
       register: keyout
+
+    - debug:
+        var: db_out
 
     - debug:
         var: keyout
